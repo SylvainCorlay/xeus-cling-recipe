@@ -1,0 +1,62 @@
+{% set name = "xeus-cling" %}
+{% set version = "0.0.3" %}
+{% set sha256 = "ce4dfba20b7c767857ccfebbd116d5e95974a2084e75d00eaaa02ef1d59b36cd" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://github.com/QuantStack/xeus-cling/archive/{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  skip: true  # [win and py<35]
+  features:   # [win]
+    - vc14    # [win]
+
+requirements:
+  build:
+    - toolchain
+    - cmake
+    - python  # [win]
+    - vc 14   # [win and py>=35]
+    - cppzmq
+    - zeromq
+    - cryptopp
+    - util-linux  # [linux]
+    - cling <0.4.0
+    - xeus >=0.5.4,<0.6.0
+    - pugixml
+    - cxxopts
+  run:
+    - vc 14  # [win and py>=35]
+    - cppzmq  # Even though cppzmq is header-only, it is used at runtime by the interpreted c++
+    - zeromq
+    - cryptopp
+    - util-linux  # [linux]
+    - cling <0.4.0
+    - xeus >=0.5.4,<0.6
+
+test:
+  commands:
+    - test -f ${PREFIX}/bin/xeus-cling  # [unix]
+    - if exist %LIBRARY_PREFIX%\bin\xeus-cling.exe (exit 0) else (exit 1)  # [win]
+
+about:
+  home: http://quantstack.net/xeus
+  license: BSD 3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: 'Cling-based C++ kernel for Jupyter based on xeus'
+  description: 'xeus is a library meant to facilitate the implementation of kernels for Jupyter. It takes the burden of implementing the Jupyter Kernel protocol so developers can focus on implementing the interpreter part of the Kernel.'
+  doc_url: http://xeus.readthedocs.io
+  dev_url: https://github.com/QuantStack/xeus
+
+extra:
+  recipe-maintainers:
+    - SylvainCorlay
+    - JohanMabille
+    - gouarin
