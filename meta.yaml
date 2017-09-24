@@ -1,6 +1,6 @@
 {% set name = "xeus-cling" %}
-{% set version = "0.0.4" %}
-{% set sha256 = "08d1ebdbeaaa67f50d2cc1880911735264ad2215a5e32678ae7b946a1eac8740" %}
+{% set version = "0.0.5" %}
+{% set sha256 = "047d2028686524fa88e3e30026ea03ba637c948944840111d7ec32fac0aacdef" %}
 
 package:
   name: {{ name|lower }}
@@ -28,17 +28,19 @@ requirements:
     - cryptopp
     - util-linux  # [linux]
     - cling <0.4.0
-    - xeus >=0.5.4,<0.6.0
+    - xeus >=0.6.0,<0.7
+    - xtl >=0.2.2,<0.3
     - pugixml
     - cxxopts
   run:
     - vc 14  # [win and py>=35]
     - cppzmq  # Even though cppzmq is header-only, it is used at runtime by the interpreted c++
+    - xtl  >=0.2.2,<0.3  # Even though xtl is header-only, it is used at runtime by the interpreted c++
+    - xeus >=0.6.0,<0.7
     - zeromq
     - cryptopp
     - util-linux  # [linux]
     - cling <0.4.0
-    - xeus >=0.5.4,<0.6
 
 test:
   commands:
