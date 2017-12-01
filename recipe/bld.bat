@@ -6,3 +6,5 @@ if errorlevel 1 exit 1
 
 nmake install
 if errorlevel 1 exit 1
+
+mv %LIBRARY_LIB%\share %LIBRARY_PREFIX%
