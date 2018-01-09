@@ -28,7 +28,7 @@ requirements:
     - xeus >=0.8.2,<0.9
     - xtl >=0.3.6,<0.4
     - pugixml
-    - cxxopts
+    - cxxopts >=1.4.1,<2.0
   run:
     - cppzmq             # Even though cppzmq is header-only, it is used at runtime by the interpreted c++
     - xtl  >=0.3.6,<0.4  # Even though xtl is header-only, it is used at runtime by the interpreted c++
