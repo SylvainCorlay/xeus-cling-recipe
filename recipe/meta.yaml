@@ -1,6 +1,6 @@
 {% set name = "xeus-cling" %}
-{% set version = "0.2.0" %}
-{% set sha256 = "052f51d786b6db0d8f0d55f79f884e085ad42271642ec7d94491bbd3eb22bc4f" %}
+{% set version = "0.2.1" %}
+{% set sha256 = "411ee0ff4ec45f3a445d01b1411222c3e40714f78a3b5aa6bda811a922a9f518" %}
 
 package:
   name: {{ name|lower }}
@@ -18,7 +18,7 @@ build:
     - cling
     - vc14    # [win and py36]
   skip: true  # [win and py<36]
-  number: '0'
+  number: 0
   string: 'cling_0'
 
 requirements:
@@ -35,14 +35,14 @@ requirements:
     - cxxopts >=1.4.1,<2.0
     - nlohmann_json >=3.1.1,<4.0
   run:
-    - cppzmq             # Even though cppzmq is header-only, it is used at runtime by the interpreted c++
-    - xtl  >=0.4.0,<0.5  # Even though xtl is header-only, it is used at runtime by the interpreted c++
     - xeus >=0.11.0,<0.12
     - zeromq
     - cryptopp
     - util-linux         # [linux]
     - cling  >=0.5,<0.6
-    - nlohmann_json >=3.1.1,<4.0
+    - cppzmq                     # Even though cppzmq is header-only, it is used at runtime by the interpreted c++
+    - xtl  >=0.4.0,<0.5          # Even though xtl is header-only, it is used at runtime by the interpreted c++
+    - nlohmann_json >=3.1.1,<4.0 # Even though nlohmann_json is header-only, it is used at runtime by the interpreted c++
 
 test:
   commands:
