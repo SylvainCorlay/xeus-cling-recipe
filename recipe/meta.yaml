@@ -30,11 +30,12 @@ requirements:
     - pugixml
     - cxxopts >=1.4.1,<2.0
     - nlohmann_json >=3.1.1,<4.0
+    - dirent >=1.21,<2.0        # [win]
   run:
     - xeus >=0.11.0,<0.12
     - zeromq
     - cryptopp
-    - util-linux         # [linux]
+    - util-linux                 # [linux]
     - cling  >=0.5,<0.6
     - cppzmq                     # Even though cppzmq is header-only, it is used at runtime by the interpreted c++
     - xtl  >=0.4.0,<0.5          # Even though xtl is header-only, it is used at runtime by the interpreted c++
