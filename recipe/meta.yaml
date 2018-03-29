@@ -1,6 +1,6 @@
 {% set name = "xeus-cling" %}
-{% set version = "0.2.4" %}
-{% set sha256 = "969c8144c4e2b83732cd5fbae13e1572072ae0409bea7c54c2288b8115963804" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "eb3513d5a2de06b90fb0f2536d5c23abc41b478f29af178fb5d4232e449eb3c3" %}
 
 package:
   name: {{ name|lower }}
@@ -13,11 +13,9 @@ source:
 
 build:
   features:
-    - cling
     - vc14    # [win and py36]
   skip: true  # [win and py<36]
   number: 0
-  string: 'cling_0'
 
 requirements:
   build:
