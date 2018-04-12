@@ -1,6 +1,6 @@
 {% set name = "xeus-cling" %}
-{% set version = "0.3.0" %}
-{% set sha256 = "eb3513d5a2de06b90fb0f2536d5c23abc41b478f29af178fb5d4232e449eb3c3" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "8dbe4651b71971fc1c4b59cd334a8ef6331464cfb5ec539a77b668e2a2945230" %}
 
 package:
   name: {{ name|lower }}
@@ -25,14 +25,14 @@ requirements:
     - zeromq
     - cryptopp
     - cling >=0.5,<0.6
-    - xeus >=0.11.0,<0.12
+    - xeus >=0.12.0,<0.13
     - xtl >=0.4.0,<0.5
     - pugixml
     - cxxopts >=1.4.1,<2.0
     - nlohmann_json >=3.1.1,<4.0
     - dirent >=1.21,<2.0        # [win]
   run:
-    - xeus >=0.11.0,<0.12
+    - xeus >=0.12.0,<0.13
     - zeromq
     - cryptopp
     - util-linux                 # [linux]
