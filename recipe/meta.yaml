@@ -1,6 +1,6 @@
 {% set name = "xeus-cling" %}
-{% set version = "0.4.1" %}
-{% set sha256 = "bc2afc46419d28674fcb66398acb3b4a02ac5899deca162e5cc41703f74558c3" %}
+{% set version = "0.4.2" %}
+{% set sha256 = "edf6447bcc9a97eb8f3889c1542f86a354142f0562141c06f3edfe2a85d473f9" %}
 
 package:
   name: {{ name|lower }}
@@ -47,14 +47,14 @@ test:
     - if exist %LIBRARY_PREFIX%\bin\xeus-cling.exe (exit 0) else (exit 1)  # [win]
 
 about:
-  home: http://quantstack.net/xeus
+  home: http://quantstack.net/xeus-cling
   license: BSD 3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: 'Cling-based C++ kernel for Jupyter based on xeus'
   description: 'xeus is a library meant to facilitate the implementation of kernels for Jupyter. It takes the burden of implementing the Jupyter Kernel protocol so developers can focus on implementing the interpreter part of the Kernel.'
-  doc_url: http://xeus.readthedocs.io
-  dev_url: https://github.com/QuantStack/xeus
+  doc_url: http://xeus-cling.readthedocs.io
+  dev_url: https://github.com/QuantStack/xeus-cling
 
 extra:
   recipe-maintainers:
