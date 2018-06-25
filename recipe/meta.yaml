@@ -1,6 +1,6 @@
 {% set name = "xeus-cling" %}
-{% set version = "0.4.3" %}
-{% set sha256 = "0df8916933840246fd0905bb4de55ba34baac8c346793f294d3af37ce9bba517" %}
+{% set version = "0.4.4" %}
+{% set sha256 = "45d5843e58c411a2588f439b8c3106f37966273c959c6b118a404d79f02c32ad" %}
 
 package:
   name: {{ name|lower }}
@@ -28,7 +28,7 @@ requirements:
     - xeus >=0.12.0,<0.13
     - xtl >=0.4.0,<0.5
     - pugixml
-    - cxxopts >=1.4.1,<2.0
+    - cxxopts >=2.1.0,<3.0
     - nlohmann_json >=3.1.1,<4.0
     - dirent >=1.21,<2.0        # [win]
   run:
